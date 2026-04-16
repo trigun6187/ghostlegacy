@@ -130,9 +130,11 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: 
-    radial-gradient(ellipse at 50% 0%, rgba(255, 71, 87, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 100%, rgba(124, 58, 237, 0.08) 0%, transparent 40%);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 71, 87, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(124, 58, 237, 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 20% 80%, rgba(124, 58, 237, 0.08) 0%, transparent 35%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 71, 87, 0.08) 0%, transparent 35%);
   pointer-events: none;
   z-index: -1;
 }
@@ -183,8 +185,10 @@ input, textarea {
   justify-content: center;
   background:
     linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%),
-    radial-gradient(ellipse at 50% 50%, rgba(255, 71, 87, 0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 40%);
+    radial-gradient(ellipse at 50% 50%, rgba(255, 71, 87, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 40%),
+    radial-gradient(ellipse at 20% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 35%),
+    radial-gradient(ellipse at 30% 30%, rgba(255, 71, 87, 0.1) 0%, transparent 30%);
   overflow: hidden;
   padding: var(--spacing-3xl) 0;
 }
@@ -585,6 +589,10 @@ section {
 
 .about-section {
   background-color: var(--bg-secondary);
+  background:
+    linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 71, 87, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 30%, rgba(124, 58, 237, 0.08) 0%, transparent 40%);
 }
 
 .about-content {
@@ -643,6 +651,10 @@ section {
 
 .services-section {
   background-color: var(--bg-primary);
+  background:
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 71, 87, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 40%);
 }
 
 .services-grid {
@@ -652,7 +664,9 @@ section {
 }
 
 .service-card {
-  background-color: var(--bg-card);
+  background-color: rgba(37, 37, 37, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: var(--spacing-2xl);
   border-radius: var(--radius-xl);
   text-align: center;
@@ -661,6 +675,16 @@ section {
   border: 1px solid var(--border-primary);
   position: relative;
   overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(255, 71, 87, 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 70% 70%, rgba(124, 58, 237, 0.1) 0%, transparent 40%);
+  pointer-events: none;
 }
 
 .service-card::before {
@@ -721,13 +745,25 @@ section {
 }
 
 .project-card {
-  background-color: var(--bg-card);
+  background-color: rgba(37, 37, 37, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
   border: 1px solid var(--border-primary);
   position: relative;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(255, 71, 87, 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 70% 70%, rgba(124, 58, 237, 0.1) 0%, transparent 40%);
+  pointer-events: none;
 }
 
 .project-card:hover {
@@ -781,6 +817,10 @@ section {
 
 .contact-section {
   background-color: var(--bg-primary);
+  background:
+    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 71, 87, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(124, 58, 237, 0.1) 0%, transparent 40%);
 }
 
 .contact-content {
@@ -880,7 +920,9 @@ section {
    ==================================== */
 
 .site-footer {
-  background-color: var(--bg-secondary);
+  background-color: rgba(34, 34, 34, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: var(--text-secondary);
   padding: var(--spacing-4xl) 0 var(--spacing-xl);
   border-top: 1px solid var(--border-primary);
