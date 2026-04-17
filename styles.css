@@ -121,7 +121,7 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   min-height: 100vh;
   position: relative;
 }
@@ -188,9 +188,9 @@ input, textarea {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  overflow: hidden;
-  overflow-x: hidden;
-  padding: 0;
+  /* overflow: hidden; */
+  /* overflow-x: hidden; */
+  /* padding: 0; */
 }
 
 .hero-section .container {
@@ -519,7 +519,7 @@ input, textarea {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .cta-button {
@@ -1079,7 +1079,7 @@ section {
   }
 
   .hero-section {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
 
   .main-nav {
@@ -1182,11 +1182,11 @@ section {
   .hero-content {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
 
   .hero-section {
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
 }
 
@@ -1224,8 +1224,8 @@ section {
 /* Mobile Responsive Containers */
 @media (max-width: 768px) {
   .container {
-    width: 95%;
-    max-width: none;
+    /* width: 95%; */
+    /* max-width: none; */
   }
   
   .hero-section {
@@ -1237,22 +1237,22 @@ section {
   /* Ensure hero section respects viewport width */
   .hero-section .container {
     max-width: 100%;
-    overflow-x: hidden;
-  }
+    /* overflow-x: hidden; */
+    }
 }
 
 /* Fix horizontal scroll on very small screens */
 @media (max-width: 480px) {
   .container {
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
+    /* padding-left: var(--spacing-md); */
+    /* padding-right: var(--spacing-md); */
   }
 
   .hero-section {
     background-position: center top;
     min-height: 100vh;
-    overflow-x: hidden;
-  }
+    /* overflow-x: hidden; */
+    }
 
   /* Ensure all hero containers respect viewport width */
   .hero-section .container,
@@ -1264,6 +1264,6 @@ section {
 
   /* Prevent any horizontal overflow in hero section */
   .hero-section * {
-    overflow-x: hidden;
-  }
+    /* overflow-x: hidden; */
+    }
 }
