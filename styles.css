@@ -171,7 +171,7 @@ input, textarea {
 /* Container */
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-xl);
 }
@@ -183,7 +183,8 @@ input, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('https://github.com/trigun6187/ghostlegacy/blob/main/hero%20background.jpg');
+  width: 100%;
+  background: url('images/hero background.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -477,7 +478,7 @@ input, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('https://raw.githubusercontent.com/trigun6187/ghostlegacy/refs/heads/main/hero%20background.jpg');
+  background: url('images/hero background.jpg');
   overflow: hidden;
 }
 
@@ -1197,4 +1198,16 @@ section {
 .site-header.scrolled {
   background-color: rgba(10, 10, 10, 0.98);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile Responsive Containers */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    max-width: none;
+  }
+  
+  .hero-section {
+    background-attachment: scroll;
+  }
 }
