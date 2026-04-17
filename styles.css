@@ -12,6 +12,9 @@
   --bg-tertiary: #2a2a2a;
   --bg-card: #252525;
   
+  /* Text Colors */
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
   /* Primary Colors - Gaming Red */
   --primary-color: #ff4757;
   --primary-dark: #e04050;
@@ -115,7 +118,6 @@ html {
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
    overflow-x: hidden;
-   width: 100vw;
 }
 
 body {
@@ -124,7 +126,7 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   min-height: 100vh;
   position: relative;
 }
@@ -191,10 +193,14 @@ input, textarea {
    background: url('images/hero background.jpg');
    background-size: cover;
    background-position: center;
-   background-attachment: scroll;
-   /* overflow: hidden; */
-   /* overflow-x: hidden; */
-   /* padding: 0; */
+   background-attachment: fixed;
+   background-color: var(--bg-primary);
+   background:
+     linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%),
+     radial-gradient(ellipse at 50% 0%, rgba(255, 71, 87, 0.15) 0%, transparent 50%),
+     radial-gradient(ellipse at 80% 100%, rgba(124, 58, 237, 0.1) 0%, transparent 40%),
+     radial-gradient(ellipse at 20% 80%, rgba(124, 58, 237, 0.08) 0%, transparent 35%),
+     radial-gradient(ellipse at 80% 20%, rgba(255, 71, 87, 0.08) 0%, transparent 35%);
 }
 
 .hero-section .container {
@@ -234,16 +240,6 @@ input, textarea {
   animation: fadeInUp 0.8s ease-out;
 }
 
-.hero-subtitle {
-  font-size: clamp(1rem, 4vw, 1.5rem);
-  font-weight: bold;
-  margin-bottom: var(--spacing-md);
-  color: var(--text-secondary);
-  line-height: 1.7;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .hero-buttons {
   display: flex;
@@ -477,89 +473,95 @@ input, textarea {
    Hero Section
    ==================================== */
 
-.hero-section {
-  position: relative;
-  min-height: calc(100vh - 72px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url('images/hero background.jpg');
-  overflow: hidden;
-}
 
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+   position: absolute;
+   inset: 0;
+   pointer-events: none;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  padding: var(--spacing-sm);
-  max-width: 900px;
-  animation: fadeInUp 0.8s ease-out;
+   position: relative;
+   z-index: 1;
+   text-align: center;
+   padding: var(--spacing-sm);
+   max-width: 900px;
+   animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  line-height: 1.1;
-  letter-spacing: -2px;
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--gray-300) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+   font-size: clamp(2.5rem, 8vw, 5rem);
+   font-weight: 800;
+   margin-bottom: var(--spacing-md);
+   line-height: 1.1;
+   letter-spacing: -2px;
+   background: linear-gradient(135deg, var(--text-primary) 0%, var(--gray-300) 100%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+}
+
+.hero-logo {
+   max-width: 100%;
+   width: 100%;
+   height: auto;
+   display: block;
+   margin: 0 auto var(--spacing-md);
+   animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 4vw, 1.5rem);
-  font-weight: bold;
-  margin-bottom: var(--spacing-md);
-  color: var(--text-secondary);
-  line-height: 1.7;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  /* white-space: nowrap; */
+   font-size: clamp(1.25rem, 4vw, 1.75rem);
+   font-weight: 500;
+   margin-top: var(--spacing-md);
+   margin-bottom: var(--spacing-lg);
+   color: var(--text-secondary);
+   line-height: 1.6;
+   letter-spacing: -0.5px;
+   animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-buttons {
+   display: flex;
+   gap: var(--spacing-md);
+   justify-content: center;
+   flex-wrap: wrap;
 }
 
 .cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-md) var(--spacing-2xl);
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-  color: var(--white);
-  font-weight: 600;
-  border-radius: var(--radius-full);
-  font-size: var(--font-md);
-  transition: all var(--transition-base);
-  box-shadow: var(--shadow-md), 0 0 20px var(--primary-glow);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+   display: inline-flex;
+   align-items: center;
+   gap: var(--spacing-sm);
+   padding: var(--spacing-md) var(--spacing-2xl);
+   background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+   color: var(--white);
+   font-weight: 600;
+   border-radius: var(--radius-full);
+   font-size: var(--font-md);
+   transition: all var(--transition-base);
+   box-shadow: var(--shadow-md), 0 0 20px var(--primary-glow);
+   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg), 0 0 30px var(--primary-glow);
-  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+   transform: translateY(-2px);
+   box-shadow: var(--shadow-lg), 0 0 30px var(--primary-glow);
+   background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
 }
 
 .cta-button::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: linear-gradient(45deg, transparent, var(--primary-glow), transparent);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity var(--transition-base);
+   content: '';
+   position: absolute;
+   inset: -2px;
+   border-radius: inherit;
+   background: linear-gradient(45deg, transparent, var(--primary-glow), transparent);
+   z-index: -1;
+   opacity: 0;
+   transition: opacity var(--transition-base);
 }
 
 .cta-button:hover::before {
-  opacity: 1;
+   opacity: 1;
 }
 
 /* ====================================
@@ -643,7 +645,7 @@ section {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--spacing-xs);
 }
 
@@ -698,7 +700,7 @@ section {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--spacing-xl);
 }
 
@@ -1082,9 +1084,6 @@ section {
     display: flex;
   }
 
-  .hero-section {
-    /* overflow-x: hidden; */
-  }
 
   .main-nav {
     position: fixed;
@@ -1122,13 +1121,6 @@ section {
     font-size: 2.5rem;
   }
 
-  .hero-subtitle {
-    font-size: 1.1rem;
-    white-space: normal;
-    max-width: 100%;
-    padding-left: var(--spacing-sm);
-    padding-right: var(--spacing-sm);
-  }
 
   .services-grid {
     grid-template-columns: 1fr;
@@ -1160,12 +1152,6 @@ section {
     font-size: 2rem;
   }
 
-  .hero-subtitle {
-     font-size: 1rem;
-  }
-  @media (max-width: 768px) {
-     .hero-subtitle { white-space: normal; }
-  }
 
   .cta-button {
     padding: var(--spacing-sm) var(--spacing-lg);
@@ -1192,9 +1178,6 @@ section {
     /* overflow-x: hidden; */
   }
 
-  .hero-section {
-    /* overflow-x: hidden; */
-  }
 }
 
 /* ====================================
@@ -1235,18 +1218,7 @@ section {
     /* max-width: none; */
   }
   
-  .hero-section {
-    background-attachment: scroll;
-    background-position: center center;
-    min-height: 100vh;
-  }
   
-  /* Ensure hero section respects viewport width */
-  .hero-section .container {
-    max-width: 100%;
-    /* overflow-x: hidden; */
-    }
-}
 
 /* Fix horizontal scroll on very small screens */
 @media (max-width: 480px) {
@@ -1255,11 +1227,6 @@ section {
     /* padding-right: var(--spacing-md); */
   }
 
-  .hero-section {
-    background-position: center top;
-    min-height: 100vh;
-    /* overflow-x: hidden; */
-    }
 
   /* Ensure all hero containers respect viewport width */
   .hero-section .container,
@@ -1272,5 +1239,5 @@ section {
   /* Prevent any horizontal overflow in hero section */
   .hero-section * {
     /* overflow-x: hidden; */
-    }
+  }
 }
