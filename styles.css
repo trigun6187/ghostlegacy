@@ -1232,3 +1232,31 @@ section {
     background-attachment: scroll;
   }
 }
+
+/* Fix horizontal scroll on very small screens */
+@media (max-width: 480px) {
+  .container {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+
+  .hero-section {
+    background-position: center top;
+    min-height: 100vh;
+  }
+
+  .hero-section .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .hero-section {
+    overflow-x: hidden;
+  }
+}
