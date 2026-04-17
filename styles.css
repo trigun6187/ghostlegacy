@@ -1224,39 +1224,46 @@ section {
 /* Mobile Responsive Containers */
 @media (max-width: 768px) {
   .container {
-    width: 90%;
+    width: 95%;
     max-width: none;
   }
   
   .hero-section {
     background-attachment: scroll;
+    background-position: center center;
+    min-height: 100vh;
+  }
+  
+  /* Ensure hero section respects viewport width */
+  .hero-section .container {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 
 /* Fix horizontal scroll on very small screens */
 @media (max-width: 480px) {
   .container {
-    padding-left: var(--spacing-sm);
-    padding-right: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
   }
 
   .hero-section {
     background-position: center top;
     min-height: 100vh;
-  }
-
-  .hero-section .container {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .hero-content {
-    width: 100%;
-    max-width: 100%;
     overflow-x: hidden;
   }
 
-  .hero-section {
+  /* Ensure all hero containers respect viewport width */
+  .hero-section .container,
+  .hero-section .container > *,
+  .hero-content {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Prevent any horizontal overflow in hero section */
+  .hero-section * {
     overflow-x: hidden;
   }
 }
