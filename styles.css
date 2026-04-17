@@ -477,7 +477,7 @@ input, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('images/hero background.jpg');
+  background: url('https://raw.githubusercontent.com/trigun6187/ghostlegacy/refs/heads/main/hero%20background.jpg');
   overflow: hidden;
 }
 
