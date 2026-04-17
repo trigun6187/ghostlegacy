@@ -942,43 +942,6 @@ section {
 }
 
 @media (max-width: 768px) {
-  .mobile-menu-toggle {
-    display: flex;
-  }
-
-
-  .main-nav {
-    position: fixed;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background-color: var(--bg-secondary);
-    border-bottom: 1px solid var(--border-primary);
-    padding: var(--spacing-lg);
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--transition-base);
-    z-index: var(--z-mobile-menu);
-  }
-
-  .main-nav.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-
-  .nav-link {
-    padding: var(--spacing-md);
-    text-align: center;
-    font-size: var(--font-md);
-  }
-
   .hero-title {
     font-size: 2.5rem;
   }
