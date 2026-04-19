@@ -9,29 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Mobile Menu Toggle
   // ====================================
   
-  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-  const mainNav = document.getElementById('mainNav');
-  const navLinks = document.querySelectorAll('.nav-link');
-  
-  if (mobileMenuToggle && mainNav) {
-    mobileMenuToggle.addEventListener('click', function() {
-      mobileMenuToggle.classList.toggle('active');
-      mainNav.classList.toggle('active');
-      
-      // Prevent body scroll when menu is open
-      document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
-    });
-    
-    // Close menu when clicking a nav link
-    navLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        mobileMenuToggle.classList.remove('active');
-        mainNav.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    });
-  }
-  
   // ====================================
   // Header Scroll Effect
   // ====================================
@@ -77,79 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // ====================================
   // Active Nav Link Highlighting
   // ====================================
-  
-  const sections = document.querySelectorAll('section[id]');
-  
-  if (sections.length > 0) {
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -20% 0px',
-      threshold: 0
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            const linkId = link.getAttribute('href').replace('#', '');
-            if (linkId === entry.target.id) {
-              navLinks.forEach(l => l.classList.remove('active'));
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }, observerOptions);
-    
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  }
-  
-  // ====================================
-  // Contact Form Validation
-  // ====================================
-  
-  const contactForm = document.getElementById('contactForm');
-  
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Get form values
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const budget = document.getElementById('budget').value.trim();
-      const message = document.getElementById('message').value.trim();
-      
-      // Simple validation
-      if (!name || !email || !message) {
-        showNotification('Please fill in all required fields.', 'error');
-        return;
-      }
-      
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        showNotification('Please enter a valid email address.', 'error');
-        return;
-      }
-      
-      // Show success message
-      showNotification('Thank you! Your message has been sent. We\'ll get back to you soon.', 'success');
-      
-      // Reset form
-      contactForm.reset();
-      
-      // In a real application, you would submit the form data here
-      console.log('Form submitted:', {
-        name,
-        email,
-        budget,
-        message
-      });
-    });
-  }
   
   // ====================================
   // Notification System
@@ -303,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   console.log('%c🎮 Ghost Legacy', 'font-size: 24px; font-weight: bold; color: #ff4757;');
   console.log('%cPremium Gaming Hardware & Custom PC Builds', 'font-size: 14px; color: #a1a1aa;');
-  console.log('%c%c%c%c', 'color: #00ff00; background: #000; padding: 2px 6px; font-family: monospace;');
+  console.log('───────────────────────────────');
   console.log('Welcome to Ghost Legacy!');
   
   // ====================================
@@ -348,21 +252,5 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
-  
-  // ====================================
-  // Form Input Animations
-  // ====================================
-  
-  const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
-  
-  formInputs.forEach(input => {
-    input.addEventListener('focus', function() {
-      this.parentElement.style.transform = 'translateX(4px)';
-    });
-    
-    input.addEventListener('blur', function() {
-      this.parentElement.style.transform = 'translateX(0)';
-    });
-  });
   
 });
